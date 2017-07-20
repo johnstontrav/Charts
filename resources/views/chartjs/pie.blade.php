@@ -3,7 +3,13 @@
 @endif
 
 <script type="text/javascript">
-	var ctx = document.getElementById("{{ $model->id }}")
+	var ctx = document.getElementById("{{ $model->id }}");
+
+	function handleClick(evt) {
+		var activeElement = myChart.getElementAtEvent(evt);
+		if (activeElement.length >0)
+		$( document ).trigger( "chartOnCLick",  [activeElement,"{{ $model->id }}","{{ $model->key }}"] );
+	}
 
 	var myChart = new Chart(ctx, {
 		type: 'pie',
@@ -46,11 +52,13 @@
 		options: {
 			responsive: {{ $model->responsive || !$model->width ? 'true' : 'false' }},
 			maintainAspectRatio: false,
+			onClick: handleClick,
             @if($model->title)
 			title: {
 				display: true,
 				text: "{!! $model->title !!}",
-				fontSize: 20,
+				fontSize: 23,
+	            fontColor: '#9f9f9f'
 			}
             @endif
 		}

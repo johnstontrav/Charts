@@ -22,6 +22,7 @@ class Chart
 {
     public $id;
     public $customId;
+    public $key;
     public $type;
     public $library;
     public $title;
@@ -102,6 +103,21 @@ class Chart
     public function oneColor($one_color)
     {
         $this->one_color = $one_color;
+
+        return $this;
+    }
+
+
+    /**
+     * Set the chart key attribute.
+     *
+     * @param bool $key
+     *
+     * @return Chart
+     */
+    public function key($key)
+    {
+        $this->key = $key;
 
         return $this;
     }
