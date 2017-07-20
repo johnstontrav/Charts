@@ -36,20 +36,39 @@
         ]
     };
 
-    var {{ $model->id }} = new Chart(ctx, {
+    var myLineChart = new Chart(ctx, {
         type: 'line',
         data: data,
-        options: {
-            responsive: {{ $model->responsive || !$model->width ? 'true' : 'false' }},
-            maintainAspectRatio: false,
+	    options: {
+		    responsive: {{ $model->responsive || !$model->width ? 'true' : 'false' }},
+		    maintainAspectRatio: false,
             @if($model->title)
-                title: {
-                    display: true,
-                    text: "{!! $model->title !!}",
-                    fontSize: 20,
-                }
+		    title: {
+			    display: true,
+			    text: "{!! $model->title !!}",
+			    fontSize: 20,
+		    },
             @endif
-        }
+            scales: {
+	            xAxes: [{
+		            scaleLabel: {
+			            display: true,
+			            labelString: 'Month'
+		            }
+	            }],
+	            yAxes: [{
+
+		            scaleLabel: {
+			            display: true,
+			            labelString: 'Value'
+		            },
+                    @if($model->stacked)
+		            stacked: true
+                    @endif
+	            }]
+            }
+
+	    }
     });
 
 
