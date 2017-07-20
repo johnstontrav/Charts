@@ -16,16 +16,16 @@
     },
     "autoload": {
         "psr-4": {
-            "ConsoleTVs\\Charts\\": "src/"
+            "johnstontrav\\Charts\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ConsoleTVs\\Charts\\ChartsServiceProvider"
+                "johnstontrav\\Charts\\ChartsServiceProvider"
             ],
             "aliases": {
-                "Charts": "ConsoleTVs\\Charts\\Facades\\Charts"
+                "Charts": "johnstontrav\\Charts\\Facades\\Charts"
             }
         }
     },
