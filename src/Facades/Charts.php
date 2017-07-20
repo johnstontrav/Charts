@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace ConsoleTVs\Charts\Facades;
+namespace johnstontrav\Charts\Facades;
 
-use ConsoleTVs\Charts\Builder;
+use johnstontrav\Charts\Builder;
 use Illuminate\Support\Facades\Facade;
 
 /**

@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace ConsoleTVs\Charts;
+namespace johnstontrav\Charts;
 
-use ConsoleTVs\Charts\Builder\Math;
-use ConsoleTVs\Charts\Builder\Chart;
-use ConsoleTVs\Charts\Builder\Multi;
+use johnstontrav\Charts\Builder\Math;
+use johnstontrav\Charts\Builder\Chart;
+use johnstontrav\Charts\Builder\Multi;
 use Illuminate\Support\Facades\File;
-use ConsoleTVs\Charts\Builder\Database;
-use ConsoleTVs\Charts\Builder\Realtime;
-use ConsoleTVs\Charts\Builder\MultiDatabase;
+use johnstontrav\Charts\Builder\Database;
+use johnstontrav\Charts\Builder\Realtime;
+use johnstontrav\Charts\Builder\MultiDatabase;
 
 /**
  * This is the charts facade class.

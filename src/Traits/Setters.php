@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace ConsoleTVs\Charts\Traits;
+namespace johnstontrav\Charts\Traits;
 
 /**
  * This is the setters trait for chart class.

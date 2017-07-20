@@ -1,6 +1,6 @@
 <?php
 
-namespace ConsoleTVs\Charts;
+namespace johnstontrav\Charts;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
