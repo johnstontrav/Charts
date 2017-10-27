@@ -20,7 +20,7 @@
                 @php($max = 100)
             @endif
 
-            humanFriendly: {{ $model->gauge_humanFriendly ? true : false }},
+            formatNumber: true,
 
             gaugeWidthScale: 0.6,
             pointer: true,
