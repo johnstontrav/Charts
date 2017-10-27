@@ -33,6 +33,7 @@ class Chart
     public $responsive;
     public $stacked;
     public $hbar;
+    public $gauge_humanFriendly;
     public $gauge_style;
     public $view;
     public $region;
@@ -428,6 +429,19 @@ class Chart
     public function hbar($hbar)
     {
         $this->hbar = $hbar;
+
+        return $this;
+    }
+    /**
+     * Set if chart is hbar (will ignore dimensions if true).
+     *
+     * @param bool $stacked
+     *
+     * @return Chart
+     */
+    public function gauge_humanFriendly($gauge_humanFriendly)
+    {
+        $this->gauge_humanFriendly = $gauge_humanFriendly;
 
         return $this;
     }
