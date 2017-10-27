@@ -22,6 +22,7 @@
 
             gaugeWidthScale: 0.6,
             pointer: true,
+		    formatNumber: true,
             counter: true,
             @if($model->title)
                 title:  "{!! $model->title !!}",
