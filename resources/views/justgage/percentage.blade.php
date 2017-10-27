@@ -21,6 +21,7 @@
             @endif
 
             donut: true,
+		    formatNumber: true,
             gaugeWidthScale: 0.6,
             counter: true,
             @if($model->title)
