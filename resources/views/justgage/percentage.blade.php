@@ -22,6 +22,7 @@
 
             donut: true,
 		    formatNumber: true,
+		    humanFriendly: true,
             gaugeWidthScale: 0.6,
             counter: true,
             @if($model->title)
