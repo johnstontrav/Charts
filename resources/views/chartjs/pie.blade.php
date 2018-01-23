@@ -52,6 +52,9 @@
 		options: {
 			responsive: {{ $model->responsive || !$model->width ? 'true' : 'false' }},
 			maintainAspectRatio: false,
+			legend: {
+				position: 'top',
+			},
 			onClick: handleClick,
             @if($model->title)
 			title: {
