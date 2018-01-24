@@ -7,8 +7,8 @@
 
 	function handleClick(evt) {
 		var activeElement = myChart.getElementAtEvent(evt);
-		if (activeElement.length >0)
-		$( document ).trigger( "chartOnCLick",  [activeElement,"{{ $model->id }}","{{ $model->key }}"] );
+		if (activeElement.length > 0)
+			$(document).trigger("chartOnCLick", [activeElement, "{{ $model->id }}", "{{ $model->key }}"]);
 	}
 
 	var myChart = new Chart(ctx, {
@@ -26,18 +26,27 @@
                     @endforeach
 				],
 				borderColor: [
-					@if(!empty($model->colors) AND is_array($model->colors))
+                    @if(!empty($model->colors) AND is_array($model->colors))
                             @foreach($model->colors as $color)
+                            @if (substr($color,0,1) == '#')
+						'{{$color}}',
+                    @else
 						window.chartColors.{{$color}},
+                    @endif
+
                     @endforeach
                     @endif
 				],
 
 				backgroundColor: [
-					@if(!empty($model->colors) AND is_array($model->colors))
+                    @if(!empty($model->colors) AND is_array($model->colors))
                             @foreach($model->colors as $color)
-                                color(window.chartColors.{{ $color }}).alpha(0.5).rgbString(),
-                    @endforeach
+                            @if (substr($color,0,1) == '#')
+						'{{$color}}',
+					@else
+                        color(window.chartColors.{{ $color }}).alpha(0.5).rgbString(),
+                    @endif
+                            @endforeach
                             @else
 
                             @foreach($model->values as $dta)
@@ -61,7 +70,7 @@
 				display: true,
 				text: "{!! $model->title !!}",
 				fontSize: 23,
-	            fontColor: '#9f9f9f'
+				fontColor: '#9f9f9f'
 			}
             @endif
 		}
