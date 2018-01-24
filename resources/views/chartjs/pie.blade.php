@@ -26,7 +26,7 @@
                     @endforeach
 				],
 				borderColor: [
-                    @if($model->colors)
+					@if(!empty($model->colors) AND is_array($model->colors))
                             @foreach($model->colors as $color)
 						window.chartColors.{{$color}},
                     @endforeach
@@ -34,7 +34,7 @@
 				],
 
 				backgroundColor: [
-					@if($model->colors)
+					@if(!empty($model->colors) AND is_array($model->colors))
                             @foreach($model->colors as $color)
                                 color(window.chartColors.{{ $color }}).alpha(0.5).rgbString(),
                     @endforeach
