@@ -5,7 +5,7 @@
 <script type="text/javascript">
 	var ctx = document.getElementById("{{ $model->id }}");
 
-	var myChart = new Chart(ctx, {
+	var myChart_{{ $model->id }} = new Chart(ctx, {
 		type: 'pie',
 		data: {
 			labels: [
@@ -59,7 +59,7 @@
 				position: 'top',
 			},
 			onClick: function(evt) {
-				var activeElement = myChart.getElementAtEvent(evt);
+				var activeElement = myChart_{{ $model->id }}.getElementAtEvent(evt);
 				if (activeElement.length > 0)
 					$(document).trigger("chartOnCLick", [activeElement, "{{ $model->id }}", "{{ $model->key }}"]);
 			},
