@@ -5,12 +5,6 @@
 <script type="text/javascript">
 	var ctx = document.getElementById("{{ $model->id }}");
 
-	function handleClick(evt) {
-		var activeElement = myChart.getElementAtEvent(evt);
-		if (activeElement.length > 0)
-			$(document).trigger("chartOnCLick", [activeElement, "{{ $model->id }}", "{{ $model->key }}"]);
-	}
-
 	var myChart = new Chart(ctx, {
 		type: 'pie',
 		data: {
@@ -64,7 +58,11 @@
 			legend: {
 				position: 'top',
 			},
-			onClick: handleClick,
+			onClick: function(evt) {
+				var activeElement = myChart.getElementAtEvent(evt);
+				if (activeElement.length > 0)
+					$(document).trigger("chartOnCLick", [activeElement, "{{ $model->id }}", "{{ $model->key }}"]);
+			},
             @if($model->title)
 			title: {
 				display: true,
