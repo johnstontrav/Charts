@@ -14,7 +14,7 @@
 	}
 
 	var myChart = new Chart(ctx, {
-		type: 'bar',
+		type: "{{ $model->hbar ? 'horizontalBar' : 'bar' }}",
 		data: {
 			labels: [
                 @foreach($model->labels as $label)
