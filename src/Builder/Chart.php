@@ -517,9 +517,10 @@ class Chart
      *
      * @return View|string
      */
-    public function render()
+    public function render($id = null)
     {
-        $this->id = $this->container ? $this->container : $this->randomString();
+        $this->id = $id ? $id : $this->randomString();
+//        $this->id = $this->container ? $this->container : $this->randomString();
 
         if (! $this->labels && ! $this->values) {
             $this->labels = [config('charts.default.empty_dataset_label')];
